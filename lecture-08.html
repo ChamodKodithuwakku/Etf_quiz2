@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 08 · jQuery | ETF Quiz Hub</title>
+<meta name="description" content="Why JavaScript and jQuery, the $(selector).action() syntax, selectors, the DOM tree, the ready handler and events.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design">07</a><a href="lecture-08.html" title="Lecture 08: jQuery" aria-current="page">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 08</p>
+    <h1>jQuery</h1>
+    <p class="lede">Why JavaScript and jQuery, the $(selector).action() syntax, selectors, the DOM tree, the ready handler and events.</p>
+    <ul class="chips" aria-label="Topics covered"><li>JavaScript</li><li>jQuery syntax</li><li>Selectors</li><li>DOM &amp; traversal</li><li>Ready handler</li><li>Events</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">Who designed JavaScript as a scripting language for the web?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Brendan Eich</span></label><label class="opt"><input type="radio" name="q1" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Mark Otto</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">John Resig</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Tim Berners-Lee</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">Brendan Eich designed JavaScript. The lecture calls it “the world's most misunderstood programming language”.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">Which of these is NOT one of the reasons the lecture gives for using JavaScript?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">It is used on both the client side and the server side</span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">It gives a more responsive user experience</span></label><label class="opt"><input type="radio" name="q2" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Many frameworks are available for it</span></label><label class="opt"><input type="radio" name="q2" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">It must be compiled to machine code before the browser can run it</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">JavaScript is interpreted by the browser. The reasons given are client and server use, a more responsive UX and the availability of frameworks.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">Which statement best describes jQuery?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">A server-side database for JavaScript</span></label><label class="opt"><input type="radio" name="q3" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">A JavaScript library that greatly simplifies JavaScript programming</span></label><label class="opt"><input type="radio" name="q3" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">A new programming language that replaces JavaScript</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">A CSS framework for responsive layouts</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">jQuery is a JavaScript library, and the most popular JavaScript framework. “It is nothing but JavaScript.”</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">In the jQuery syntax <code>$(selector).action()</code>, what is the <code>$</code> sign for?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">To declare a JavaScript variable</span></label><label class="opt"><input type="radio" name="q4" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">To send an AJAX request</span></label><label class="opt"><input type="radio" name="q4" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">To define / access jQuery</span></label><label class="opt"><input type="radio" name="q4" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">To perform the action on the element</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>$</code> defines or accesses jQuery, <code>(selector)</code> finds HTML elements, and <code>action()</code> is performed on them.</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">What does <code>$(".test").hide()</code> do?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Hides the element with id="test"</span></label><label class="opt"><input type="radio" name="q5" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">Hides all elements with class="test"</span></label><label class="opt"><input type="radio" name="q5" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Hides all <code>&lt;test&gt;</code> elements</span></label><label class="opt"><input type="radio" name="q5" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Hides the current element</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">A <code>.</code> selects by class. <code>$("#test")</code> selects by id, and <code>$(this)</code> is the current element.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">In the DOM tree, which property refers to the element that contains a node?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>firstChild</code></span></label><label class="opt"><input type="radio" name="q6" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>childNodes</code></span></label><label class="opt"><input type="radio" name="q6" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>nextSibling</code></span></label><label class="opt"><input type="radio" name="q6" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>parentNode</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain"><code>parentNode</code> is the element that contains this node. <code>childNodes</code> is the array of all its children.</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">Which of these is the short version of the jQuery document ready handler?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>$(document).load(function() { ... });</code></span></label><label class="opt"><input type="radio" name="q7" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>window.ready = function() { ... };</code></span></label><label class="opt"><input type="radio" name="q7" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>$(function() { ... });</code></span></label><label class="opt"><input type="radio" name="q7" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>$.ready(true);</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>$(function(){ ... })</code> is short for <code>$(document).ready(function(){ ... })</code>.</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t">Which selector selects <code>&lt;a&gt;</code> elements that are <strong>direct children</strong> of a <code>&lt;p&gt;</code>?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>$("p a")</code></span></label><label class="opt"><input type="radio" name="q8" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>$("p&gt;a")</code></span></label><label class="opt"><input type="radio" name="q8" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>$("p+a")</code></span></label><label class="opt"><input type="radio" name="q8" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>$("p, a")</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>p a</code> = any descendant, <code>p&gt;a</code> = direct child, <code>p+a</code> = immediately after a <code>&lt;p&gt;</code>, <code>p, a</code> = both <code>&lt;p&gt;</code> and <code>&lt;a&gt;</code>.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">Which of these is a <strong>keyboard</strong> event in jQuery?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>dblclick</code></span></label><label class="opt"><input type="radio" name="q9" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>submit</code></span></label><label class="opt"><input type="radio" name="q9" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>keydown</code></span></label><label class="opt"><input type="radio" name="q9" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>resize</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">Keyboard events are keypress, keydown and keyup. dblclick is a mouse event, submit is a form event and resize is a document/window event.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">What happens when the user clicks the button?</p>
+  <pre class="code"><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide();
+  });
+});
+...
+&lt;h2&gt;This is a heading&lt;/h2&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;button&gt;Click me&lt;/button&gt;</code></pre>
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Both paragraphs are hidden. The heading and the button stay visible</span></label><label class="opt"><input type="radio" name="q10" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Only the first paragraph is hidden</span></label><label class="opt"><input type="radio" name="q10" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">The heading and both paragraphs are hidden</span></label><label class="opt"><input type="radio" name="q10" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">The button hides itself</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain"><code>$("p").hide()</code> hides every <code>&lt;p&gt;</code> element. The <code>&lt;h2&gt;</code> and <code>&lt;button&gt;</code> are not <code>&lt;p&gt;</code> elements.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">What is jQuery? Give four reasons why developers use jQuery.</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>jQuery is a <strong>JavaScript library</strong>, the most popular JavaScript framework. It is designed to change the way you write JavaScript and greatly simplifies JavaScript programming.</p><ul><li><strong>Write less code.</strong> What takes 20 or more lines of JavaScript can be done in two or three lines of jQuery.</li><li><strong>The same code runs in all browsers.</strong></li><li>It uses <strong>CSS selectors and JavaScript notation</strong>, which developers already know.</li><li>It is <strong>easy to learn</strong>.</li><li>It is widely used by companies such as Netflix, Amazon, Twitter, Dell and Best Buy.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">Describe two ways to access (include) the jQuery library in a web page. Write the <code>&lt;script&gt;</code> tag for each.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>1. <strong>Download the library</strong> and reference it locally. The file should be in the same directory:</p><pre class="code"><code>&lt;script src="jquery.js"&gt;&lt;/script&gt;</code></pre><p>2. <strong>Reference the online copy</strong> directly:</p><pre class="code"><code>&lt;script src="http://code.jquery.com/jquery-3.3.1.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">Explain the basic jQuery syntax <code>$(selector).action()</code>. State what each statement does: <code>$(this).hide()</code>, <code>$("p").hide()</code>, <code>$(".test").hide()</code>, <code>$("#test").hide()</code>.</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><code>$</code> defines/accesses jQuery.</li><li><code>(selector)</code> queries (finds) HTML elements.</li><li><code>action()</code> is the jQuery action performed on the element(s).</li></ul><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Statement</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td><code>$(this).hide()</code></td><td>Hides the current element</td></tr><tr><td><code>$("p").hide()</code></td><td>Hides all <code>&lt;p&gt;</code> elements</td></tr><tr><td><code>$(".test").hide()</code></td><td>Hides all elements with <code>class="test"</code></td></tr><tr><td><code>$("#test").hide()</code></td><td>Hides the element with <code>id="test"</code></td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">Define the Document Object Model (DOM). Draw the DOM tree for the HTML below and name the node types.</p>
+  <pre class="code"><code>&lt;p&gt;
+  This is a paragraph of text with a
+  &lt;a href="/path/page.html"&gt;link in it&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>The <strong>DOM</strong> is a cross-platform, language-independent convention for representing and interacting with objects in HTML, XHTML and XML documents. A programming language such as JavaScript or jQuery can address and manipulate its parts, such as elements.</p><pre class="code"><code>&lt;p&gt;                                    element node
+├── "This is a paragraph of text with a "   text node
+├── &lt;a&gt;                                element node
+│   ├── href="/path/page.html"         attribute node
+│   └── "link in it"                   text node
+└── "."                                text node</code></pre><p>There are three node types here: <strong>element</strong>, <strong>text</strong> and <strong>attribute</strong> nodes.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">For the HTML below, let <code>p</code> be the paragraph and <code>a</code> the link. What does each expression refer to? (a) <code>p.firstChild</code> (b) <code>p.lastChild</code> (c) <code>a.parentNode</code> (d) <code>a.previousSibling</code> (e) <code>p.childNodes.length</code></p>
+  <pre class="code"><code>&lt;p id="foo"&gt;This is a paragraph of text with a &lt;a href="/path/to/another/page.html"&gt;link&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>(a) The text node “This is a paragraph of text with a ”</li><li>(b) The text node “.”</li><li>(c) The <code>&lt;p id="foo"&gt;</code> element</li><li>(d) The text node “This is a paragraph of text with a ”</li><li>(e) 3: text node, <code>&lt;a&gt;</code> element, text node</li></ul><p>Reminder: <code>firstChild</code>/<code>lastChild</code> are the start/end of the node's list of children, <code>childNodes</code> is the array of all children, <code>nextSibling</code>/<code>previousSibling</code> are neighbouring nodes with the same parent, and <code>parentNode</code> is the element that contains the node.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">What is the jQuery document ready handler, and why should jQuery code go inside it? Write both the long and short versions.</p>
+  
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>The <strong>ready</strong> event occurs when the DOM has been loaded. Code inside the ready handler runs only after the document is ready, so every element exists and can be selected safely. This makes it a good place for all other jQuery events and functions. The <code>ready()</code> method specifies what happens when the ready event occurs.</p><pre class="code"><code>// Long version
+$(document).ready(function(){
+  // jQuery code here
+});
+
+// Short version
+$(function() {
+  // jQuery code here
+});</code></pre></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">List the four categories of jQuery events with at least two examples each. What does the alert show when the <strong>Delete</strong> button is clicked in the code below?</p>
+  <pre class="code"><code>$(document).ready(function () {
+  $(':button').click(function (eventObj) {
+    alert(this.value + ' ' + this.type + ' clicked');
+  });
+});
+...
+&lt;input type="button" value="Save"   id="Btn1" /&gt;
+&lt;input type="button" value="Delete" id="Btn2" /&gt;
+&lt;input type="button" value="Clear"  id="Btn3" /&gt;</code></pre>
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Mouse</th><th scope="col">Keyboard</th><th scope="col">Form</th><th scope="col">Document / Window</th></tr></thead><tbody><tr><td>click</td><td>keypress</td><td>submit</td><td>load</td></tr><tr><td>dblclick</td><td>keydown</td><td>change</td><td>resize</td></tr><tr><td>mouseenter</td><td>keyup</td><td>focus</td><td>scroll</td></tr><tr><td>mouseleave</td><td></td><td>blur</td><td>unload</td></tr></tbody></table></div><p>The alert shows <strong>“Delete button clicked”</strong>: <code>this.value</code> is "Delete" and <code>this.type</code> is "button". The selector <code>':button'</code> matches all three buttons, so each one shows its own value.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">Predict the output after the user clicks “My Answer”. Which statement uses jQuery and which uses plain JavaScript?</p>
+  <pre class="code"><code>$(document).ready(function(){
+  $("#hide").click(function(){
+    writeIt();
+  });
+});
+function writeIt(){
+  $("#heading").css('font-weight', 'bold').html("jQuery");
+  var q = document.getElementById("question");
+  q.innerHTML = "I Prefer jQuery!";
+}
+...
+&lt;p id="heading"&gt;jQuery or JavaScript&lt;/p&gt;
+&lt;p id="question"&gt;Which method do you prefer?&lt;/p&gt;
+&lt;button id="hide"&gt;My Answer&lt;/button&gt;</code></pre>
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>The first paragraph (<code>#heading</code>) becomes <strong>bold</strong> and its text changes to <strong>“jQuery”</strong>. This is <strong>jQuery</strong> with method chaining: <code>$("#heading").css('font-weight','bold').html("jQuery")</code>.</li><li>The second paragraph (<code>#question</code>) changes to <strong>“I Prefer jQuery!”</strong>. This is <strong>plain JavaScript</strong>: <code>document.getElementById("question").innerHTML = ...</code>.</li><li>The button stays on the page.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">Write jQuery code that turns <code>&lt;div id="myDiv"&gt;</code> (100×100 px, initially red) green when the mouse enters it and red again when the mouse leaves.</p>
+  
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>$(document).ready(function () {
+  $('#myDiv').mouseenter(function () {
+    $(this).css('background-color', 'green');
+  });
+  $('#myDiv').mouseleave(function () {
+    $(this).css('background-color', 'red');
+  });
+});</code></pre><p><code>mouseenter</code> and <code>mouseleave</code> are mouse events, <code>$(this)</code> refers to the div that fired the event, and <code>.css()</code> changes its style.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">Explain what each jQuery selector selects: (a) <code>$("p:first")</code> (b) <code>$("p.intro")</code> (c) <code>$("p a")</code> (d) <code>$("p+a")</code> (e) <code>$("p, a")</code> (f) <code>$("li:has(ul)")</code> (g) <code>$(":not(p)")</code> (h) <code>$("p:hidden")</code></p>
+  
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Selector</th><th scope="col">Selects</th></tr></thead><tbody><tr><td><code>p:first</code></td><td>The first <code>&lt;p&gt;</code> element</td></tr><tr><td><code>p.intro</code></td><td><code>&lt;p&gt;</code> elements that have the CSS class <code>intro</code></td></tr><tr><td><code>p a</code></td><td><code>&lt;a&gt;</code> elements descended from a <code>&lt;p&gt;</code></td></tr><tr><td><code>p+a</code></td><td><code>&lt;a&gt;</code> elements directly following a <code>&lt;p&gt;</code></td></tr><tr><td><code>p, a</code></td><td>All <code>&lt;p&gt;</code> and all <code>&lt;a&gt;</code> elements</td></tr><tr><td><code>li:has(ul)</code></td><td><code>&lt;li&gt;</code> elements with at least one <code>&lt;ul&gt;</code> descendant</td></tr><tr><td><code>:not(p)</code></td><td>All elements except <code>&lt;p&gt;</code> elements</td></tr><tr><td><code>p:hidden</code></td><td>Only the <code>&lt;p&gt;</code> elements that are hidden</td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="lecture-07.html"><span class="dir">← Previous</span>Lecture 07 · Responsive Web Design</a><a class="next" href="lecture-09-1.html"><span class="dir">Next →</span>Lecture 09 · I · JSON</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>

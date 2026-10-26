@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 09 · I · JSON | ETF Quiz Hub</title>
+<meta name="description" content="JavaScript Object Notation: objects and arrays, syntax rules, parse/stringify, JSON vs XML and JSON security.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design">07</a><a href="lecture-08.html" title="Lecture 08: jQuery">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON" aria-current="page">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 09 · I</p>
+    <h1>JSON</h1>
+    <p class="lede">JavaScript Object Notation: objects and arrays, syntax rules, parse/stringify, JSON vs XML and JSON security.</p>
+    <ul class="chips" aria-label="Topics covered"><li>JSON structures</li><li>Syntax rules</li><li>parse &amp; stringify</li><li>JSON vs XML</li><li>eval() &amp; security</li><li>JSON APIs</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">What does JSON stand for?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Java Standard Object Notation</span></label><label class="opt"><input type="radio" name="q1" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">JavaScript Object Notation</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">JavaScript Online Network</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Java Serialized Object Node</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">JSON = JavaScript Object Notation, a lightweight data-interchange format.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">Which built-in JavaScript function converts a JSON string into a JavaScript object?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>JSON.stringify()</code></span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>JSON.toObject()</code></span></label><label class="opt"><input type="radio" name="q2" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>JSON.parse()</code></span></label><label class="opt"><input type="radio" name="q2" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>Object.fromJSON()</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>JSON.parse()</code> turns a JSON string into an object. <code>JSON.stringify()</code> does the opposite.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">What does <code>JSON.stringify()</code> do?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Converts a JavaScript object or value into a JSON string</span></label><label class="opt"><input type="radio" name="q3" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Checks whether a JSON string is valid</span></label><label class="opt"><input type="radio" name="q3" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Converts XML into JSON</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Converts a JSON string into a JavaScript object</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">JSON data is text only. <code>stringify()</code> produces that text so it can be sent between computers.</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">JSON is built on which two structures?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Tables and rows</span></label><label class="opt"><input type="radio" name="q4" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Tags and attributes</span></label><label class="opt"><input type="radio" name="q4" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Classes and methods</span></label><label class="opt"><input type="radio" name="q4" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">A collection of name/value pairs and an ordered list of values</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">Name/value pairs become an object, record, dictionary or hash table. An ordered list becomes an array, vector, list or sequence.</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">A JSON object begins and ends with…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>[</code> and <code>]</code></span></label><label class="opt"><input type="radio" name="q5" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>{</code> and <code>}</code></span></label><label class="opt"><input type="radio" name="q5" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>&lt;</code> and <code>&gt;</code></span></label><label class="opt"><input type="radio" name="q5" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>(</code> and <code>)</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Objects use braces <code>{ }</code>. Arrays use brackets <code>[ ]</code>.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">Which of these is NOT a valid JSON value?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>'hello'</code></span></label><label class="opt"><input type="radio" name="q6" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>"hello"</code></span></label><label class="opt"><input type="radio" name="q6" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>true</code></span></label><label class="opt"><input type="radio" name="q6" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>null</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">JSON strings must be in <strong>double</strong> quotes. Valid values are strings, numbers, true, false, null, objects and arrays.</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">Which of these is valid JSON?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>{name:"John", age:30}</code></span></label><label class="opt"><input type="radio" name="q7" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>{"name":"John", "age":30, "car":null}</code></span></label><label class="opt"><input type="radio" name="q7" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>{'name':'John', 'age':30}</code></span></label><label class="opt"><input type="radio" name="q7" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>{"name":"John", "age":30,}</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Names must be strings in double quotes, and a trailing comma is not allowed.</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t"><code>obj</code> holds the data below. What is <code>obj.employees[1].lastName</code>?</p>
+  <pre class="code"><code>{"employees":[
+  {"firstName":"John",  "lastName":"Doe"},
+  {"firstName":"Anna",  "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+]}</code></pre>
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">"Doe"</span></label><label class="opt"><input type="radio" name="q8" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">"Anna"</span></label><label class="opt"><input type="radio" name="q8" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">"Smith"</span></label><label class="opt"><input type="radio" name="q8" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">"Jones"</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">Array indexes start at 0, so <code>employees[1]</code> is the second object: Anna Smith.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">According to the lecture, which JavaScript method can validate a JSON string but should only be used when the source is trusted?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>JSON.check()</code></span></label><label class="opt"><input type="radio" name="q9" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>validate()</code></span></label><label class="opt"><input type="radio" name="q9" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>eval()</code></span></label><label class="opt"><input type="radio" name="q9" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>parseInt()</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>eval()</code> runs any code it is given, so use it only on authentic, trusted strings. <code>parseJSON()</code> is safer, while <code>eval()</code> is faster.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">Which two main classes are available in the <code>org.json.*</code> package?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>JSONParser</code> and <code>JSONWriter</code></span></label><label class="opt"><input type="radio" name="q10" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>JSONObject</code> and <code>JSONArray</code></span></label><label class="opt"><input type="radio" name="q10" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>JSONString</code> and <code>JSONNumber</code></span></label><label class="opt"><input type="radio" name="q10" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>JSONFile</code> and <code>JSONStream</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>org.json.JSONObject</code> and <code>org.json.JSONArray</code>. Their <code>toString()</code> methods generate JSON strings.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">Define JSON and list five characteristics that make it an ideal data-interchange language.</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p><strong>JSON (JavaScript Object Notation)</strong> is a lightweight, text-based data-interchange format.</p><ul><li>Easy for humans to read and write</li><li>Easy for machines to parse and generate</li><li>Based on a subset of the JavaScript programming language (Standard ECMA-262, 3rd Edition, December 1999)</li><li>A text format that is completely language independent</li><li>Text only, so data can easily be sent between computers and used by any programming language</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">Explain the two structures JSON is built on. For each one, give its equivalent in other programming languages and a JSON example.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>A collection of name/value pairs.</strong> Other languages call it an object, record, dictionary, hash table, keyed list or associative array. Example: <code>{"name":"John"}</code></li><li><strong>An ordered list of values.</strong> Other languages call it an array, vector, list or sequence. Example: <code>["red", "green", "blue"]</code></li></ul><p>These structures can be nested, for example an object that holds an array of objects.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">Describe the syntax rules for a JSON <strong>object</strong>, a JSON <strong>array</strong>, a <strong>value</strong> and a <strong>string</strong>.</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>Object:</strong> an unordered set of name/value pairs. It begins with <code>{</code> and ends with <code>}</code>. Each name is followed by <code>:</code> and the pairs are separated by <code>,</code>.</li><li><strong>Array:</strong> an ordered collection of values. It begins with <code>[</code> and ends with <code>]</code>, and values are separated by <code>,</code>.</li><li><strong>Value:</strong> a string in double quotes, a number, <code>true</code>, <code>false</code>, <code>null</code>, an object or an array. Values can be nested.</li><li><strong>String:</strong> zero or more Unicode characters wrapped in double quotes, using backslash escapes. A character is a single-character string, much like a C or Java string.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">Find and correct every error in the following JSON.</p>
+  <pre class="code"><code>{ name: 'Kamal',
+  "age": 25,
+  "marks": [80, 90, 75,],
+  "active": True }</code></pre>
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><code>name</code> is not in quotes. Names must be strings: <code>"name"</code>.</li><li><code>'Kamal'</code> uses single quotes. Use double quotes: <code>"Kamal"</code>.</li><li>There is a trailing comma after <code>75</code>, which is not allowed.</li><li><code>True</code> must be lowercase: <code>true</code>.</li></ul><pre class="code"><code>{
+  "name": "Kamal",
+  "age": 25,
+  "marks": [80, 90, 75],
+  "active": true
+}</code></pre></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">Convert this XML document into equivalent JSON.</p>
+  <pre class="code"><code>&lt;?xml version="1.0" ?&gt;
+&lt;students&gt;
+  &lt;student&gt;
+    &lt;id&gt;1&lt;/id&gt;
+    &lt;name&gt;Adnan&lt;/name&gt;
+  &lt;/student&gt;
+  &lt;student&gt;
+    &lt;id&gt;2&lt;/id&gt;
+    &lt;name&gt;Irfan&lt;/name&gt;
+  &lt;/student&gt;
+&lt;/students&gt;</code></pre>
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>{
+  "students": [
+    { "id": 1, "name": "Adnan" },
+    { "id": 2, "name": "Irfan" }
+  ]
+}</code></pre><p>The repeated <code>&lt;student&gt;</code> elements become an array, and each child element becomes a name/value pair. JSON needs no closing tags, so it is shorter.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">Write a JSON document that stores the records of three students. Each record has <code>sid</code>, <code>name</code>, <code>age</code>, <code>address</code> and <code>cgpa</code>.</p>
+  
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>{
+  "students": [
+    { "sid": 1, "name": "Nimal", "age": 22, "address": "Malabe",    "cgpa": 3.45 },
+    { "sid": 2, "name": "Saman", "age": 23, "address": "Colombo 3", "cgpa": 3.10 },
+    { "sid": 3, "name": "Kasun", "age": 21, "address": "Kandy",     "cgpa": 3.72 }
+  ]
+}</code></pre><p>Check: every name is in double quotes, strings are in double quotes, numbers have no quotes, and there are no trailing commas.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">Given <code>let text = '{"name":"John", "age":30, "car":null}';</code>, write JavaScript to (a) convert it to an object, (b) read the name and age, and (c) convert the object back into a JSON string.</p>
+  
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>let obj = JSON.parse(text);        // (a) string -&gt; object
+let personName = obj.name;         // (b) "John"
+let personAge  = obj.age;          //     30
+console.log(personName, personAge);
+let back = JSON.stringify(obj);    // (c) '{"name":"John","age":30,"car":null}'</code></pre><p>The object has 3 properties: name, age and car. Each property has a value, and <code>car</code> is <code>null</code>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">What does the browser display when this page runs? Explain how the loop works.</p>
+  <pre class="code"><code>var myObj, i, x = "";
+myObj = { "students" : [
+    {"id":1, "name":"Adnan"},
+    {"id":2, "name":"Irfan"} ] };
+for (i in myObj.students) {
+  x += "&lt;h2&gt;" + myObj.students[i].name + "&lt;/h2&gt;";
+  x += myObj.students[i].id + "&lt;br&gt;";
+}
+document.getElementById("demo").innerHTML = x;</code></pre>
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>Adnan      (as an &lt;h2&gt; heading)
+1
+Irfan      (as an &lt;h2&gt; heading)
+2</code></pre><p><code>for (i in myObj.students)</code> loops over the array indexes 0 and 1. For each student it adds the name inside <code>&lt;h2&gt;</code> and then the id followed by <code>&lt;br&gt;</code> to <code>x</code>. Finally <code>x</code> is written into the <code>#demo</code> paragraph with <code>innerHTML</code>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">Explain what this jQuery code does and state its output.</p>
+  <pre class="code"><code>var results = "";
+$(document).ready(function () {
+  var jsonArray = [ {"id":1, "name":"Adnan"},
+                    {"id":2, "name":"Irfan"} ];
+  $(jsonArray).each(function (index, item) {
+    var cid = item.id;
+    var cname = item.name;
+    results += "&lt;h3&gt;" + cid + "&lt;/h3&gt;";
+    results += cname + "&lt;/br&gt;";
+  });
+  $('#data').html(results);
+});</code></pre>
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>When the DOM is ready, <code>$(jsonArray).each(function(index, item){...})</code> runs once for every object in the array.</li><li><code>item.id</code> and <code>item.name</code> read each object's values, which are added to <code>results</code> as an <code>&lt;h3&gt;</code> (id) followed by the name and a line break.</li><li><code>$('#data').html(results)</code> puts the built HTML into the <code>#data</code> paragraph.</li></ul><p>Output under the heading “This jQuery with JSON Example”: <strong>1</strong> (h3), Adnan, <strong>2</strong> (h3), Irfan.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">Discuss (a) the benefits of JSON over XML and (b) the security risk of validating JSON with <code>eval()</code>.</p>
+  
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>(a) Benefits of JSON over XML:</p><ul><li>JSON supports data types such as string, integer and Boolean.</li><li>It is the native data format of JavaScript, so the browser reads and understands it faster. XML has to be parsed with XPath, an overhead JSON removes.</li><li>JSON has no tags, only data, so less data is transferred between client and server. It is lighter than XML, whose tags increase the data size.</li><li>It is easy for humans to read and write.</li></ul><p>(b) <code>eval()</code> executes whatever JavaScript it is given, so a malicious string could run harmful code. Use <code>eval()</code> only when the source is authentic and trusted. When there is a security risk, use a parser such as <code>parseJSON()</code> from json.org/json.js. <code>eval()</code> is faster but less safe. In modern JavaScript, the built-in <code>JSON.parse()</code> is the safe choice.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="lecture-08.html"><span class="dir">← Previous</span>Lecture 08 · jQuery</a><a class="next" href="lecture-09-2.html"><span class="dir">Next →</span>Lecture 09 · II · AJAX</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>

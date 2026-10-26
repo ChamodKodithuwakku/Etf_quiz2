@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 12 · MongoDB | ETF Quiz Hub</title>
+<meta name="description" content="NoSQL and document databases: BSON, collections, the _id field, MongoDB vs SQL, and CRUD in the mongo shell.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design">07</a><a href="lecture-08.html" title="Lecture 08: jQuery">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB" aria-current="page">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 12</p>
+    <h1>MongoDB</h1>
+    <p class="lede">NoSQL and document databases: BSON, collections, the _id field, MongoDB vs SQL, and CRUD in the mongo shell.</p>
+    <ul class="chips" aria-label="Topics covered"><li>NoSQL</li><li>BSON</li><li>_id &amp; ObjectId</li><li>MongoDB vs SQL</li><li>CRUD</li><li>Querying &amp; updating</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">MongoDB is best described as…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">An open-source, document-based NoSQL database</span></label><label class="opt"><input type="radio" name="q1" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">A relational database that uses SQL</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">A JavaScript front-end framework</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">A key-value cache only</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">MongoDB is open source and document-based, with high performance, high availability and automatic scaling.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">Which of these is NOT one of the NoSQL database types?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Key-value</span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Graph</span></label><label class="opt"><input type="radio" name="q2" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Column family</span></label><label class="opt"><input type="radio" name="q2" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">Relational (tables joined with SQL)</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">NoSQL types: key-value, graph, document-oriented (MongoDB) and column family.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">In what format are MongoDB documents stored?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">XML</span></label><label class="opt"><input type="radio" name="q3" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">CSV</span></label><label class="opt"><input type="radio" name="q3" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">BSON (binary JSON)</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">YAML</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">Documents are stored in BSON, a binary form of JSON, as field-value pairs.</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">What is the maximum size of a single MongoDB document?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">1 MB</span></label><label class="opt"><input type="radio" name="q4" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">16 MB</span></label><label class="opt"><input type="radio" name="q4" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">64 MB</span></label><label class="opt"><input type="radio" name="q4" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Unlimited</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">MongoDB is document-based, with a maximum of 16 MB per document.</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">In MongoDB, a <strong>collection</strong> is equivalent to what in SQL?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">A table / view</span></label><label class="opt"><input type="radio" name="q5" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">A tuple (row)</span></label><label class="opt"><input type="radio" name="q5" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">A primary key</span></label><label class="opt"><input type="radio" name="q5" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">A join</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">Document ↔ tuple, collection ↔ table/view, embedded structure ↔ joins, shard ↔ partition.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">Which statement about the <code>_id</code> field is TRUE?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">It can hold an array</span></label><label class="opt"><input type="radio" name="q6" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">It can be changed after the document is inserted</span></label><label class="opt"><input type="radio" name="q6" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">It is the primary key. Its value must be unique and immutable, and its default type is ObjectId</span></label><label class="opt"><input type="radio" name="q6" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">It is optional and is never added automatically</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>_id</code> is the primary key: unique, immutable, any non-array type. ObjectId is small, likely unique, fast to generate and ordered.</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">Which shell command switches to a database, creating it if needed?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>show dbs</code></span></label><label class="opt"><input type="radio" name="q7" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>db</code></span></label><label class="opt"><input type="radio" name="q7" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>show collections</code></span></label><label class="opt"><input type="radio" name="q7" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>use &lt;name&gt;</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain"><code>use &lt;name&gt;</code> switches to the database or makes a new one. It is not actually created until you insert data.</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t">What does this query return?</p>
+  <pre class="code"><code>db.products.find({ item: { $in: ["card", "pencil"] } })</code></pre>
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Documents where item is BOTH "card" and "pencil"</span></label><label class="opt"><input type="radio" name="q8" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">Documents where item is either "card" or "pencil"</span></label><label class="opt"><input type="radio" name="q8" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Only the first matching document</span></label><label class="opt"><input type="radio" name="q8" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Documents where item is NOT "card" or "pencil"</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>$in</code> checks for multiple values of the same field, like SQL's <code>IN</code>.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">The BSON type numbers (e.g. String = 2, Boolean = 8) can be used with which operator to query by type?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>$type</code></span></label><label class="opt"><input type="radio" name="q9" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>$in</code></span></label><label class="opt"><input type="radio" name="q9" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>$exists</code></span></label><label class="opt"><input type="radio" name="q9" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>$set</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">Use the type number with the <code>$type</code> operator to query by BSON type.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">What does <code>$unset</code> do in an update?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Deletes the whole document</span></label><label class="opt"><input type="radio" name="q10" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">Removes a field from the document</span></label><label class="opt"><input type="radio" name="q10" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Sets the field to null but keeps it</span></label><label class="opt"><input type="radio" name="q10" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Drops the whole collection</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>db.c.update({&lt;field&gt;:&lt;value&gt;}, { $unset: { &lt;field&gt;: 1 } })</code> removes that field.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">Explain the problems with SQL databases that motivated MongoDB, and list the perks of MongoDB.</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>Problems with SQL:</p><ul><li><strong>Rigid schema</strong></li><li><strong>Not easily scalable.</strong> It was designed for 1990s technology or worse.</li><li>Requires <strong>unintuitive joins</strong>, which are expensive on huge, distributed data</li></ul><p>Perks of MongoDB:</p><ul><li>An easy interface with common languages (Java, JavaScript, PHP, etc.)</li><li>Database technology that should run anywhere (VMs, cloud, etc.)</li><li>Keeps the essential features of an RDBMS while learning from key-value NoSQL systems</li><li>Open source and document-based, with high performance, high availability and automatic scaling</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">Describe the MongoDB data model: documents, BSON and collections.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>Document-based:</strong> data is stored as documents, with a maximum of <strong>16 MB</strong> each.</li><li>Documents use the <strong>BSON (binary JSON)</strong> format and consist of <strong>field-value pairs</strong>. Values can be embedded documents or arrays.</li><li>Each document is stored in a <strong>collection</strong>. Collections are like the tables of a relational database and share a common set of indexes.</li><li>Documents in a collection <strong>do not have to have a uniform structure</strong>, so different documents can have different fields.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">Compare MongoDB and SQL by giving the equivalent concept for at least six terms.</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">MongoDB</th><th scope="col">SQL</th></tr></thead><tbody><tr><td>Document</td><td>Tuple (row)</td></tr><tr><td>Collection</td><td>Table / View</td></tr><tr><td>PK: <code>_id</code> field</td><td>PK: any attribute(s)</td></tr><tr><td>Uniformity not required</td><td>Uniform relation schema</td></tr><tr><td>Index</td><td>Index</td></tr><tr><td>Embedded structure</td><td>Joins</td></tr><tr><td>Shard</td><td>Partition</td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">Explain the special characteristics of the <code>_id</code> field and the ObjectId type. Also give two rules for field names.</p>
+  
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>By default every document contains an <code>_id</code> field, which acts as the <strong>primary key</strong> of the collection.</li><li>Its value is <strong>unique</strong> and <strong>immutable</strong>, and it can be <strong>any type except an array</strong>.</li><li>The default type is <strong>ObjectId</strong>, which is small, likely unique, fast to generate and ordered. Sorting on ObjectId is roughly the same as sorting by creation time.</li></ul><p>Field-name rules: field names <strong>cannot start with <code>$</code></strong> and <strong>cannot contain <code>.</code></strong>. The name <code>_id</code> is reserved for the primary key.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">Write the mongo shell commands to (a) check which database you are using, (b) show all databases, (c) switch to or create <code>school</code>, and (d) list its collections. Why might <code>school</code> not appear in <code>show dbs</code> straight after <code>use school</code>?</p>
+  
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>db                 // (a) current database
+show dbs           // (b) all databases
+use school         // (c) switch to / create "school"
+show collections   // (d) collections in the current db</code></pre><p>Databases are <strong>not actually created until you insert data</strong>, so <code>school</code> only appears in <code>show dbs</code> after a document has been inserted.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">Write MongoDB commands to insert into <code>products</code> (a) the single document <code>{ item: "card", qty: 15 }</code> and (b) the pencil, pen and eraser documents in one command. Explain how <code>save()</code> differs from <code>insert()</code>.</p>
+  
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>// (a) one document
+db.products.insert( { item: "card", qty: 15 } )
+
+// (b) several documents: pass an array
+db.products.insert([
+  { _id: 11, item: "pencil", qty: 50, type: "no.2" },
+  { item: "pen", qty: 20 },
+  { item: "eraser", qty: 25 }
+])</code></pre><p>Documents without <code>_id</code> get an ObjectId automatically. Adding a field name that is new to the collection is fine in BSON. <code>save(&lt;document&gt;)</code> <strong>inserts</strong> if the document has no <code>_id</code> or its <code>_id</code> is not in the collection; <strong>otherwise it updates</strong> the existing document.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">Convert each SQL statement into a MongoDB command.</p>
+  <pre class="code"><code>SELECT * FROM products;
+SELECT * FROM products WHERE item = 'card' AND qty &lt; 30;
+SELECT * FROM products WHERE item = 'card' OR qty &lt; 30;
+UPDATE products SET qty = 40 WHERE item = 'pen';
+DELETE FROM products WHERE item = 'eraser';</code></pre>
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>db.products.find()
+db.products.find({ item: "card", qty: { $lt: 30 } })
+db.products.find({ $or: [ { item: "card" }, { qty: { $lt: 30 } } ] })
+db.products.update({ item: "pen" }, { $set: { qty: 40 } })
+db.products.remove({ item: "eraser" })</code></pre><p>Comma-separated conditions mean <strong>AND</strong>. Use <code>$or</code> with an array for <strong>OR</strong>. <code>find()</code> returns a cursor, and the shell shows the first 20 results.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">Explain the update options <code>$set</code>, <code>multi: true</code> and <code>upsert: true</code>. What happens if you call <code>update()</code> with a plain document (no <code>$set</code>) as the second argument? How do you remove only the first matching document?</p>
+  
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><code>$set</code>: sets the given field(s) to new values and leaves the other fields unchanged.</li><li><code>{ multi: true }</code>: updates <strong>all</strong> matching documents, not just the first.</li><li><code>{ upsert: true }</code>: <strong>creates a new document</strong> when none matches the search criteria.</li><li>A plain document without <code>$set</code> <strong>replaces all field-value pairs</strong>. It overwrites the entire contents of the document and removes any fields you did not include.</li><li>Remove only the first match: <code>db.&lt;collection&gt;.remove({&lt;field&gt;:&lt;value&gt;}, true)</code>.</li></ul><pre class="code"><code>db.students.update({ year: 2 }, { $set: { status: "active" } }, { multi: true })</code></pre></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">Using the <code>Employee</code> collection, write queries to (a) find employees named Smith, (b) find employees with Employeeid greater than 2, (c) sort all employees by Employeeid in descending order, (d) return only EmployeeName without <code>_id</code>, and (e) find documents that have a <code>salary</code> field.</p>
+  
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>db.Employee.find({ EmployeeName: "Smith" })               // (a)
+db.Employee.find({ Employeeid: { $gt: 2 } })              // (b)
+db.Employee.find().sort({ Employeeid: -1 })               // (c) -1 = descending
+db.Employee.find({}, { EmployeeName: 1, _id: 0 })         // (d) projection
+db.Employee.find({ salary: { $exists: true } })           // (e)</code></pre><p>In <code>sort()</code>, 1 means ascending and -1 means descending. In a projection, 1 includes a field and 0 excludes it.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">Explain what each command does and state what is left in the <code>user</code> collection at the end. Assume it started empty.</p>
+  <pre class="code"><code>&gt; db.user.insert({ first: "John", last: "Doe", age: 39 })
+&gt; db.user.find()
+&gt; db.user.update(
+    { "_id": ObjectId("51...") },
+    { $set: { age: 40, salary: 7000 } }
+  )
+&gt; db.user.remove({ "first": /^J/ })</code></pre>
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><code>insert(...)</code> adds a document for John Doe, age 39. MongoDB adds an <code>_id</code> (ObjectId).</li><li><code>find()</code> returns all documents and shows John's document with its generated <code>_id</code>.</li><li><code>update(...)</code> finds the document by <code>_id</code> and uses <code>$set</code> to change <code>age</code> to 40 and add a new field <code>salary: 7000</code>.</li><li><code>remove({ "first": /^J/ })</code> deletes every document whose <code>first</code> field starts with “J” (a regular expression).</li></ul><p><strong>Final state:</strong> John's document matches <code>/^J/</code>, so it is removed and the <strong>collection is empty</strong>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="lecture-11.html"><span class="dir">← Previous</span>Lecture 11 · Building REST API — Part II</a><a class="next" href="index.html"><span class="dir">Done →</span>Back to all lectures</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>

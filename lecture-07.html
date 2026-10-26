@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 07 · Responsive Web Design | ETF Quiz Hub</title>
+<meta name="description" content="Bootstrap basics: CDN setup, the viewport tag, containers, the 12-column grid, tables, images and buttons.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design" aria-current="page">07</a><a href="lecture-08.html" title="Lecture 08: jQuery">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 07</p>
+    <h1>Responsive Web Design</h1>
+    <p class="lede">Bootstrap basics: CDN setup, the viewport tag, containers, the 12-column grid, tables, images and buttons.</p>
+    <ul class="chips" aria-label="Topics covered"><li>Responsive design</li><li>Bootstrap</li><li>Viewport</li><li>Containers</li><li>Grid system</li><li>Tables &amp; images</li><li>Buttons</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">What is the main goal of responsive web design?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Making web pages load faster on slow servers</span></label><label class="opt"><input type="radio" name="q1" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">Creating web sites that automatically adjust to look good on all devices, from small phones to large desktops</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Building a separate web site for every type of device</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Using fixed pixel widths so the layout never changes</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Responsive design means one site whose layout adapts to the screen size of any device.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">Bootstrap was originally developed by…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Brendan Eich at Netscape</span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Tim Berners-Lee at W3C</span></label><label class="opt"><input type="radio" name="q2" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">Mark Otto and Jacob Thornton at Twitter</span></label><label class="opt"><input type="radio" name="q2" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">The Google Chrome team</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">Mark Otto and Jacob Thornton built Bootstrap at Twitter. It was released as open source on GitHub in August 2011.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">What is the main difference between Bootstrap 5 and Bootstrap 3 &amp; 4?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Bootstrap 5 no longer has a grid system</span></label><label class="opt"><input type="radio" name="q3" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">Bootstrap 5 switched to plain JavaScript instead of jQuery</span></label><label class="opt"><input type="radio" name="q3" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Bootstrap 5 can only be downloaded, not used from a CDN</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Bootstrap 5 is desktop-first instead of mobile-first</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Bootstrap 5 adds new components, faster stylesheets and more responsiveness, and it uses JavaScript instead of jQuery.</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">In <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>, what does <code>initial-scale=1</code> do?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Sets the page width to follow the screen width of the device</span></label><label class="opt"><input type="radio" name="q4" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Makes every image 100% wide</span></label><label class="opt"><input type="radio" name="q4" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">Sets the initial zoom level when the page is first loaded</span></label><label class="opt"><input type="radio" name="q4" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Disables zooming on touch devices</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>width=device-width</code> sets the page width to the device's screen width. <code>initial-scale=1</code> sets the initial zoom level.</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">Which container class gives a full-width container spanning the entire width of the viewport?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>.container</code></span></label><label class="opt"><input type="radio" name="q5" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>.container-fluid</code></span></label><label class="opt"><input type="radio" name="q5" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>.row</code></span></label><label class="opt"><input type="radio" name="q5" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>.container-full</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>.container</code> is a responsive fixed-width container. <code>.container-fluid</code> spans the full width of the viewport. Containers are not nestable.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">The Bootstrap grid system allows up to how many columns across the page?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">12</span></label><label class="opt"><input type="radio" name="q6" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">6</span></label><label class="opt"><input type="radio" name="q6" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">16</span></label><label class="opt"><input type="radio" name="q6" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">24</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">The grid allows up to 12 columns. In each row, the numbers in the <code>.col-*-*</code> classes should add up to 12.</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">Which grid class prefix is intended for tablets?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>xs</code></span></label><label class="opt"><input type="radio" name="q7" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>sm</code></span></label><label class="opt"><input type="radio" name="q7" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>md</code></span></label><label class="opt"><input type="radio" name="q7" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>lg</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>xs</code> = phones, <code>sm</code> = tablets, <code>md</code> = desktops, <code>lg</code> = larger desktops.</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t">Which class adds zebra-stripes to a Bootstrap table?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>.table-bordered</code></span></label><label class="opt"><input type="radio" name="q8" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>.table-hover</code></span></label><label class="opt"><input type="radio" name="q8" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>.table-responsive</code></span></label><label class="opt"><input type="radio" name="q8" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>.table-striped</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain"><code>.table-striped</code> adds zebra-stripes. <code>.table-bordered</code> adds borders, <code>.table-hover</code> adds a hover state on rows and <code>.table-responsive</code> makes the table scroll horizontally on small screens.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">Which CSS does the <code>.img-responsive</code> class apply to an image?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>float: left; margin: 10px;</code></span></label><label class="opt"><input type="radio" name="q9" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>border-radius: 50%;</code></span></label><label class="opt"><input type="radio" name="q9" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>width: 100vw; height: 100vh;</code></span></label><label class="opt"><input type="radio" name="q9" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>display: block; max-width: 100%; height: auto;</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">With these rules the image scales to fit its parent element and never grows wider than it.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">Which class makes a button span the entire width of its parent element?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>.btn-block</code></span></label><label class="opt"><input type="radio" name="q10" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>.btn-lg</code></span></label><label class="opt"><input type="radio" name="q10" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>.btn-wide</code></span></label><label class="opt"><input type="radio" name="q10" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>.btn-primary</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain"><code>.btn-block</code> creates a block-level button. <code>.btn-lg</code> only changes the size.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">Define responsive web design. What is Bootstrap, and what does it provide to help build responsive web sites?</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p><strong>Responsive web design</strong> means creating web sites that automatically adjust themselves to look good on all devices, from small phones to large desktops.</p><p><strong>Bootstrap</strong> is a free, open-source front-end framework (HTML, CSS and JavaScript) for faster and easier, mobile-first web development. It provides:</p><ul><li>HTML- and CSS-based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and more</li><li>Optional JavaScript plugins</li><li>A responsive 12-column grid system, so layouts re-arrange automatically for different screen sizes</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">Briefly describe the history of Bootstrap and list its four main advantages.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>Bootstrap was developed by <strong>Mark Otto and Jacob Thornton at Twitter</strong> and released as an open-source product on GitHub in <strong>August 2011</strong>. Bootstrap 5 is the newest version. It adds new components, faster stylesheets and more responsiveness, and it uses JavaScript instead of jQuery.</p><p>Main advantages:</p><ul><li>Easy to use</li><li>Responsive features</li><li>Mobile-first approach</li><li>Browser compatibility</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">Describe the two ways to start using Bootstrap on a web site, and explain two advantages of using a CDN.</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>Download</strong> Bootstrap from getbootstrap.com and host it yourself.</li><li><strong>Include it from a CDN</strong> (Content Delivery Network) such as MaxCDN by linking its CSS and JavaScript files. Older versions also need jQuery.</li></ul><p>Advantages of a CDN:</p><ul><li>Many users have already downloaded Bootstrap from the CDN on other sites, so the browser loads it from <strong>cache</strong>, which makes loading faster.</li><li>The CDN serves the file from the <strong>server closest to the user</strong>, which also makes loading faster.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">Write the viewport <code>&lt;meta&gt;</code> tag used in Bootstrap pages. Explain why it is needed and what each part of its <code>content</code> attribute does.</p>
+  
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre><ul><li>Bootstrap is <strong>mobile-first</strong>. Put this tag inside <code>&lt;head&gt;</code> to ensure proper rendering and touch zooming on mobile devices.</li><li><code>width=device-width</code> sets the width of the page to follow the screen width of the device.</li><li><code>initial-scale=1</code> sets the initial zoom level when the page is first loaded by the browser.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">Write a complete HTML5 page that uses Bootstrap from a CDN and shows the heading “My First Bootstrap Page” inside a fixed-width container.</p>
+  
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Bootstrap Example&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"&gt;
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+    &lt;p&gt;.container is a fixed width container&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p>Key points: the HTML5 doctype with <code>lang</code> and <code>charset</code>, the viewport meta tag, the Bootstrap CSS (plus jQuery and Bootstrap JS for v3), and the content wrapped in <code>.container</code>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">Explain the difference between <code>.container</code> and <code>.container-fluid</code>. Can containers be nested?</p>
+  
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>Bootstrap requires a containing element to wrap the site contents.</li><li><code>.container</code> is a responsive <strong>fixed-width</strong> container. Its width changes at each breakpoint.</li><li><code>.container-fluid</code> is a <strong>full-width</strong> container that spans the entire width of the viewport.</li><li>Containers are <strong>not nestable</strong>, so do not put one container inside another.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">Write Bootstrap markup for a desktop layout with one row of three equal columns. Explain why you chose those column numbers.</p>
+  
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Column 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><p>First create a row (<code>&lt;div class="row"&gt;</code>), then add columns with <code>.col-*-*</code> classes. The grid has 12 columns and the numbers in each row should add up to 12, so three equal columns are 4 + 4 + 4. <code>md</code> targets desktops. On smaller screens the columns stack automatically.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">Name the four grid classes of the Bootstrap grid system and the devices they target. How does <code>&lt;div class="col-sm-6 col-md-3"&gt;</code> behave?</p>
+  
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Class</th><th scope="col">Intended for</th></tr></thead><tbody><tr><td><code>xs</code></td><td>Phones</td></tr><tr><td><code>sm</code></td><td>Tablets</td></tr><tr><td><code>md</code></td><td>Desktops</td></tr><tr><td><code>lg</code></td><td>Larger desktops</td></tr></tbody></table></div><p>You can combine the classes for more flexible layouts. <code>col-sm-6 col-md-3</code> takes 6/12 (half the row) on tablets and 3/12 (a quarter) on desktops and larger. On phones (xs) it stacks to full width.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">(a) Explain what each Bootstrap table class does: <code>.table</code>, <code>.table-striped</code>, <code>.table-bordered</code>, <code>.table-hover</code>, <code>.table-responsive</code>. (b) What do <code>.img-rounded</code>, <code>.img-circle</code> and <code>.img-thumbnail</code> do?</p>
+  
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Class</th><th scope="col">Effect</th></tr></thead><tbody><tr><td><code>.table</code></td><td>Basic styling: light padding and only horizontal dividers</td></tr><tr><td><code>.table-striped</code></td><td>Adds zebra-stripes to the rows</td></tr><tr><td><code>.table-bordered</code></td><td>Adds borders on all sides of the table and cells</td></tr><tr><td><code>.table-hover</code></td><td>Adds a hover state on table rows</td></tr><tr><td><code>.table-responsive</code></td><td>Scrolls horizontally on small devices (under 768px). Above 768px it looks the same.</td></tr></tbody></table></div><ul><li><code>.img-rounded</code>: adds rounded corners to an image</li><li><code>.img-circle</code>: shapes the image into a circle</li><li><code>.img-thumbnail</code>: shapes the image into a thumbnail (bordered box)</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">Write HTML with Bootstrap classes to create: (a) a large, block-level success button, (b) a link styled as an info button, (c) a disabled primary button and (d) an active (pressed) danger button. Which elements can the button classes be used on?</p>
+  
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>&lt;button type="button" class="btn btn-success btn-lg btn-block"&gt;Save&lt;/button&gt;
+&lt;a href="#" class="btn btn-info" role="button"&gt;Link Button&lt;/a&gt;
+&lt;button type="button" class="btn btn-primary disabled"&gt;Disabled Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger active"&gt;Active Danger&lt;/button&gt;</code></pre><ul><li>You can use the button classes on <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> and <code>&lt;input&gt;</code> elements.</li><li>Styles: <code>.btn-default</code>, <code>.btn-primary</code>, <code>.btn-success</code>, <code>.btn-info</code>, <code>.btn-warning</code>, <code>.btn-danger</code>, <code>.btn-link</code></li><li>Sizes: <code>.btn-lg</code>, <code>.btn-md</code>, <code>.btn-sm</code>, <code>.btn-xs</code></li><li><code>.active</code> makes a button look pressed. <code>.disabled</code> makes it unclickable.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="index.html"><span class="dir">← Back</span>All lectures</a><a class="next" href="lecture-08.html"><span class="dir">Next →</span>Lecture 08 · jQuery</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>

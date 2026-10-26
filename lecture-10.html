@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 10 · Building REST API — Part I | ETF Quiz Hub</title>
+<meta name="description" content="REST concepts: resources and URIs, the airline reservation analogy, Axiom 0, HTTP methods and status codes.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design">07</a><a href="lecture-08.html" title="Lecture 08: jQuery">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I" aria-current="page">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 10</p>
+    <h1>Building REST API — Part I</h1>
+    <p class="lede">REST concepts: resources and URIs, the airline reservation analogy, Axiom 0, HTTP methods and status codes.</p>
+    <ul class="chips" aria-label="Topics covered"><li>REST</li><li>Resources &amp; URIs</li><li>Axiom 0</li><li>Airline example</li><li>HTTP methods</li><li>Status codes</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">What does REST stand for?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Remote Execution of Server Tasks</span></label><label class="opt"><input type="radio" name="q1" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">REpresentational State Transfer</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Reliable Exchange of Structured Text</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Resource Encoding Standard Template</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">REST = REpresentational State Transfer.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">REST is best described as…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">An architectural pattern</span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">A programming language</span></label><label class="opt"><input type="radio" name="q2" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">A database engine</span></label><label class="opt"><input type="radio" name="q2" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">A JavaScript library</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">REST is an architectural pattern that uses resources instead of web pages.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">In REST, what is a <em>resource</em>?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Only an HTML web page</span></label><label class="opt"><input type="radio" name="q3" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">The server's CPU and memory</span></label><label class="opt"><input type="radio" name="q3" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">Any object the server can provide information about, identified by a unique URI</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">A JavaScript function on the client</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">A resource can be any object the server can provide information about, and each one has a unique identifier (URI).</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">Tim Berners-Lee's Web Design <strong>Axiom 0</strong> states that…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">All web pages must use HTML5</span></label><label class="opt"><input type="radio" name="q4" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Every server must support HTTPS</span></label><label class="opt"><input type="radio" name="q4" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Each web site must have only one URL</span></label><label class="opt"><input type="radio" name="q4" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">All resources on the Web must be uniquely identified with a URI</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">Axiom 0: every resource on the Web must be uniquely identified with a URI.</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">In the web-based airline reservation example, which approach follows the REST design pattern?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">A single URL, where the service examines each request to work out its priority</span></label><label class="opt"><input type="radio" name="q5" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">A separate URL for premier, frequent-flyer and regular members</span></label><label class="opt"><input type="radio" name="q5" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">A phone menu: “Press 1 for Premier, Press 2 for…”</span></label><label class="opt"><input type="radio" name="q5" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Emailing reservations to a customer representative</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">“URLs are cheap! Use them!” Giving each resource its own URL is the REST design pattern.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">What are the three fundamental aspects of the REST design pattern?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Resources, URLs and simple operations</span></label><label class="opt"><input type="radio" name="q6" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">HTML, CSS and JavaScript</span></label><label class="opt"><input type="radio" name="q6" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Clients, cookies and sessions</span></label><label class="opt"><input type="radio" name="q6" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Tables, rows and joins</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">Resources, URLs that identify them, and simple operations (HTTP methods).</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">Which HTTP method should be used to <strong>create</strong> a new resource in a collection?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">GET</span></label><label class="opt"><input type="radio" name="q7" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">PATCH</span></label><label class="opt"><input type="radio" name="q7" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">POST</span></label><label class="opt"><input type="radio" name="q7" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">DELETE</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">POST creates a new resource in the collection of resources.</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t">Which HTTP method should be used <strong>only to retrieve</strong> a resource's representation or information?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">GET</span></label><label class="opt"><input type="radio" name="q8" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">PUT</span></label><label class="opt"><input type="radio" name="q8" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">POST</span></label><label class="opt"><input type="radio" name="q8" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">DELETE</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">GET requests should only retrieve data and never change it.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">How does PATCH differ from PUT?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">PATCH deletes a resource and PUT creates one</span></label><label class="opt"><input type="radio" name="q9" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">There is no difference</span></label><label class="opt"><input type="radio" name="q9" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">PATCH only works with XML</span></label><label class="opt"><input type="radio" name="q9" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">PATCH updates a specific part of a resource and does not create it if it is missing. PUT updates the resource, and the API may create it if it does not exist</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">With PATCH, a missing resource is an error. With PUT, the API may decide whether to create a new resource.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">A successful POST to <code>/customers</code> that creates a new customer should return…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">200 (OK) only</span></label><label class="opt"><input type="radio" name="q10" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">404 (Not Found)</span></label><label class="opt"><input type="radio" name="q10" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">201 (Created) with a ‘Location’ header linking to /customers/{id}</span></label><label class="opt"><input type="radio" name="q10" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">405 (Method Not Allowed)</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">201 Created, with a Location header that contains the new ID.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">Define REST. Explain what a <em>resource</em> and a <em>URI</em> are in REST, with an example.</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p><strong>REST (REpresentational State Transfer)</strong> is an architectural pattern. In REST you work with <strong>resources</strong> instead of web pages.</p><ul><li><strong>Resource:</strong> any object the server can provide information about, such as a student, an order or a flight booking.</li><li><strong>URI:</strong> each resource has a unique identifier (URI) that is used to access it.</li></ul><p>Example: <code>http://www.gogo-air/reservations/premier</code> identifies the premier-member reservation service. <code>/students/5</code> could identify the student with id 5.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">In the airline <strong>telephone</strong> reservation example, describe Approach 1 and Approach 2.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>The airline wants premier members served immediately, frequent flyers given expedited service, and everyone else given regular service.</p><ul><li><strong>Approach 1: “Press 1 for Premier, Press 2 for…”.</strong> There is one telephone number. An automated message asks customers to press 1 (premier), 2 (frequent flyer) or 3 (others), and the call is routed to the matching representative.</li><li><strong>Approach 2: “Telephone numbers are cheap! Use them!”.</strong> There are separate numbers, e.g. 1-800-Premier, 1-800-Frequent and 1-800-Reservation, so each group calls its own representative directly.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">Describe the two approaches for the <strong>web-based</strong> airline reservation service. Which one is the REST design pattern, and why?</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>Approach 1: one-stop shopping.</strong> There is a single URL. The web service must examine every incoming request to determine its priority and then process it.</li><li><strong>Approach 2: “URLs are cheap! Use them!”.</strong> There is a separate URL for each group, e.g. <code>/reservations/premier</code>, <code>/reservations/frequent-flyer</code> and <code>/reservations/regular</code>.</li></ul><p><strong>Approach 2 is the REST design pattern.</strong> Each resource (service) is uniquely identified by its own URL, which follows Axiom 0. Clients go straight to the right resource, and the service no longer has to inspect each request to decide its priority.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">State Tim Berners-Lee's Web Design Axiom 0. Explain the two fundamental aspects of REST it leads to, and list five things that can be a resource.</p>
+  
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p><strong>Axiom 0:</strong> all resources on the Web must be uniquely identified with a URI.</p><ul><li><strong>Resources:</strong> every distinguishable entity is a resource.</li><li><strong>URLs identify resources:</strong> every resource is uniquely identified by a URL.</li></ul><p>Examples of resources: a web site, an HTML page, an XML document, a web service and a physical device.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">Name and explain the three fundamental aspects of the REST design pattern.</p>
+  
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>Resources:</strong> every distinguishable entity, such as a page, document, service or device, is a resource.</li><li><strong>URLs:</strong> every resource is uniquely identified by a URL (Axiom 0).</li><li><strong>Simple operations:</strong> a small, standard set of HTTP operations acts on resources: GET (read), POST (create), PUT (update/replace), PATCH (update/modify) and DELETE.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">Make a table that maps each HTTP verb (POST, GET, PUT, PATCH, DELETE) to its CRUD operation and describes its purpose.</p>
+  
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">HTTP verb</th><th scope="col">CRUD</th><th scope="col">Purpose</th></tr></thead><tbody><tr><td>POST</td><td>Create</td><td>Create a new resource in the collection</td></tr><tr><td>GET</td><td>Read</td><td>Retrieve a resource's representation/information only</td></tr><tr><td>PUT</td><td>Update / Replace</td><td>Update an existing resource. The API may create it if it does not exist</td></tr><tr><td>PATCH</td><td>Update / Modify</td><td>Update a specific item in the resource. A missing resource is an error</td></tr><tr><td>DELETE</td><td>Delete</td><td>Delete the resource identified by the Request-URI</td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">Compare <strong>PUT</strong> and <strong>PATCH</strong> and give an example of when to use each.</p>
+  
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col"></th><th scope="col">PUT</th><th scope="col">PATCH</th></tr></thead><tbody><tr><td>Purpose</td><td>Updates/replaces an existing resource</td><td>Updates only specific items (fields) of a resource</td></tr><tr><td>If the resource doesn't exist</td><td>The API may decide to create it</td><td>Does <strong>not</strong> create it. That is an error</td></tr><tr><td>Example</td><td>PUT <code>/students/5</code> with the full student record</td><td>PATCH <code>/students/5</code> with only <code>{"address":"Kandy"}</code></td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">For a <code>/customers</code> REST API, give the expected response status for: (a) GET /customers (b) GET /customers/99 when customer 99 does not exist (c) POST /customers that adds a customer (d) POST /customers/{id} when that resource already exists (e) DELETE /customers on the whole collection (f) a PUT /customers/5 that succeeds.</p>
+  
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>(a) <strong>200 OK</strong> with the list of customers (use pagination, sorting and filtering for big lists)</li><li>(b) <strong>404 Not Found</strong>: the ID was not found or is invalid</li><li>(c) <strong>201 Created</strong> with a <code>Location</code> header linking to <code>/customers/{id}</code></li><li>(d) <strong>409 Conflict</strong>: the resource already exists</li><li>(e) <strong>405 Method Not Allowed</strong>, unless you really want to delete the whole collection</li><li>(f) <strong>200 OK</strong> or <strong>204 No Content</strong></li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">Design REST endpoints for a library system that manages books. For each operation give the HTTP method, the URI and a suitable success status: list all books, get one book, add a book, replace a book, change only a book's title, delete a book.</p>
+  
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Operation</th><th scope="col">Method</th><th scope="col">URI</th><th scope="col">Success</th></tr></thead><tbody><tr><td>List all books</td><td>GET</td><td><code>/books</code></td><td>200 OK</td></tr><tr><td>Get one book</td><td>GET</td><td><code>/books/{id}</code></td><td>200 OK</td></tr><tr><td>Add a book</td><td>POST</td><td><code>/books</code></td><td>201 Created</td></tr><tr><td>Replace a book</td><td>PUT</td><td><code>/books/{id}</code></td><td>200 / 204</td></tr><tr><td>Change only the title</td><td>PATCH</td><td><code>/books/{id}</code></td><td>200 / 204</td></tr><tr><td>Delete a book</td><td>DELETE</td><td><code>/books/{id}</code></td><td>200 OK</td></tr></tbody></table></div><p>Unknown ids should return 404 Not Found.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">“In REST, you use resources instead of web pages.” Explain this statement and give three example resources with suitable URIs for a university system.</p>
+  
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p>A traditional site is built around pages that a user navigates. A REST service is built around <strong>resources</strong>, the things (data) the server knows about. Each resource has its own unique URI, and clients use simple HTTP operations on that URI to read or change it. Any kind of client can use the same resource, whether it is a web page, a mobile app or another server.</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Resource</th><th scope="col">URI</th></tr></thead><tbody><tr><td>All students</td><td><code>/students</code></td></tr><tr><td>One student</td><td><code>/students/{id}</code></td></tr><tr><td>Courses of a student</td><td><code>/students/{id}/courses</code></td></tr><tr><td>One lecture</td><td><code>/courses/{code}/lectures/{no}</code></td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="lecture-09-2.html"><span class="dir">← Previous</span>Lecture 09 · II · AJAX</a><a class="next" href="lecture-11.html"><span class="dir">Next →</span>Lecture 11 · Building REST API — Part II</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>

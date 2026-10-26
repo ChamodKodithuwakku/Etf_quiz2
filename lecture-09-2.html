@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 09 · II · AJAX | ETF Quiz Hub</title>
+<meta name="description" content="Asynchronous JavaScript and XML: XMLHttpRequest, readyState and status, and jQuery&#x27;s load(), getJSON() and ajax().">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design">07</a><a href="lecture-08.html" title="Lecture 08: jQuery">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX" aria-current="page">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 09 · II</p>
+    <h1>AJAX</h1>
+    <p class="lede">Asynchronous JavaScript and XML: XMLHttpRequest, readyState and status, and jQuery&#x27;s load(), getJSON() and ajax().</p>
+    <ul class="chips" aria-label="Topics covered"><li>Sync vs async</li><li>XMLHttpRequest</li><li>readyState &amp; status</li><li>jQuery load()</li><li>getJSON()</li><li>$.ajax()</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">What does AJAX stand for?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Asynchronous JavaScript And XML</span></label><label class="opt"><input type="radio" name="q1" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Advanced Java And XHTML</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Asynchronous JSON And XHTML</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Application JavaScript API eXchange</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">AJAX = Asynchronous JavaScript And XML.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">Which statement about AJAX is correct?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">AJAX is a new programming language</span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">AJAX is a database query language</span></label><label class="opt"><input type="radio" name="q2" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">AJAX is a development technique for creating interactive web applications</span></label><label class="opt"><input type="radio" name="q2" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">AJAX only works with XML data</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">AJAX is not a programming language. It is a technique that uses JavaScript to exchange data with a server.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">What is the main advantage of using AJAX?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">It removes the need for a web server</span></label><label class="opt"><input type="radio" name="q3" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">It updates part of a web page without reloading the whole page</span></label><label class="opt"><input type="radio" name="q3" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">It makes pages work offline</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">It replaces HTML with JavaScript</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Data is exchanged with the server behind the scenes, so the page does not reload every time the user makes a change.</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">What is the correct order of steps for using the XMLHttpRequest object?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Create object → Define callback → Open → Send</span></label><label class="opt"><input type="radio" name="q4" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Open → Create object → Send → Define callback</span></label><label class="opt"><input type="radio" name="q4" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Define callback → Send → Create object → Open</span></label><label class="opt"><input type="radio" name="q4" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Create object → Send → Open → Define callback</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">Create the object (<code>new XMLHttpRequest()</code>), define the callback (<code>onload</code>), open it (<code>open("GET", url)</code>) and send the request (<code>send()</code>).</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">An XMLHttpRequest <code>readyState</code> of <strong>4</strong> means…</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">uninitialized</span></label><label class="opt"><input type="radio" name="q5" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">loading</span></label><label class="opt"><input type="radio" name="q5" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">interactive</span></label><label class="opt"><input type="radio" name="q5" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">complete</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">0 = uninitialized, 1 = loading, 2 = loaded, 3 = interactive (some data returned), 4 = complete.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">Which HTTP status code means “Not Found”?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">200</span></label><label class="opt"><input type="radio" name="q6" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">403</span></label><label class="opt"><input type="radio" name="q6" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">404</span></label><label class="opt"><input type="radio" name="q6" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">500</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">200 = OK, 403 = Forbidden, 404 = Not Found.</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">Which XMLHttpRequest property returns the response data as a string?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>responseXML</code></span></label><label class="opt"><input type="radio" name="q7" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>responseText</code></span></label><label class="opt"><input type="radio" name="q7" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>statusText</code></span></label><label class="opt"><input type="radio" name="q7" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>readyState</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain"><code>responseText</code> returns a string, <code>responseXML</code> returns XML data, and <code>statusText</code> is text such as "OK".</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t">Which XMLHttpRequest method terminates the current request?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>send()</code></span></label><label class="opt"><input type="radio" name="q8" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>close()</code></span></label><label class="opt"><input type="radio" name="q8" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>abort()</code></span></label><label class="opt"><input type="radio" name="q8" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>setRequestHeader()</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>abort()</code> terminates the current request.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">What does the jQuery <code>load()</code> method do?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Loads the jQuery library</span></label><label class="opt"><input type="radio" name="q9" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">Loads data from a server and puts the returned data into the selected element</span></label><label class="opt"><input type="radio" name="q9" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Reloads the whole page</span></label><label class="opt"><input type="radio" name="q9" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Loads a JSON file into a variable without displaying it</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Syntax: <code>$(selector).load(URL, [data], [callback])</code>.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">In <code>$.getJSON('simpleObject.json', function(data){ ... })</code>, what is <code>data</code>?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">The raw JSON text as a string</span></label><label class="opt"><input type="radio" name="q10" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">The XMLHttpRequest object</span></label><label class="opt"><input type="radio" name="q10" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">The status of the request</span></label><label class="opt"><input type="radio" name="q10" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">The parsed JSON as a JavaScript object</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain"><code>getJSON()</code> parses the returned JSON string and passes the result to the callback as its first parameter.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">What is AJAX? Explain how it makes web pages more responsive, and list three things you can do with it.</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p><strong>AJAX (Asynchronous JavaScript And XML)</strong> is not a programming language. It is a development technique for creating interactive web applications. It uses JavaScript to send and receive data between a web browser and a web server.</p><p>It makes pages more responsive by exchanging data with the server <strong>behind the scenes</strong>, instead of reloading the entire page each time the user makes a change.</p><ul><li>Read data from a web server after the page has loaded</li><li>Update a web page without reloading the page</li><li>Send data to a web server in the background</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">Compare <strong>synchronous</strong> and <strong>asynchronous</strong> communication between a browser and a server.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col"></th><th scope="col">Synchronous</th><th scope="col">Asynchronous (AJAX)</th></tr></thead><tbody><tr><td>Waiting</td><td>The browser sends a request and waits (is blocked) until the response arrives</td><td>The request is sent in the background and the browser does not wait</td></tr><tr><td>User</td><td>Cannot interact with the page during the request</td><td>Keeps working with the page</td></tr><tr><td>Update</td><td>Usually the whole page is reloaded</td><td>A callback updates only the part of the page that changed</td></tr><tr><td>Feel</td><td>Slower, with page flicker</td><td>Faster and more responsive</td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">The lecture compares Client/Server apps, Traditional web apps and AJAX apps. Describe each and explain why AJAX is “the best of both worlds”.</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Type</th><th scope="col">Characteristics</th><th scope="col">Result</th></tr></thead><tbody><tr><td>Client/Server apps</td><td>Dynamic data; static forms, controls and code</td><td>Efficient but not flexible</td></tr><tr><td>Traditional web apps</td><td>Dynamic data; dynamic forms, controls and code (whole page regenerated)</td><td>Flexible but inefficient and noticeably slow</td></tr><tr><td>AJAX apps</td><td>Dynamic data; static <strong>or</strong> dynamic forms, controls and code</td><td>Best of both worlds</td></tr></tbody></table></div><p>AJAX apps keep the efficiency of client/server apps, because only data is exchanged, and the flexibility of web apps, because the page can still change dynamically.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">List the four steps for using the XMLHttpRequest object and write the code for each step to request <code>ajax_info.txt</code>.</p>
+  
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>// 1. Create an XMLHttpRequest object
+const xhttp = new XMLHttpRequest();
+
+// 2. Define a callback function
+xhttp.onload = function() {
+  document.getElementById("demo").innerHTML = this.responseText;
+};
+
+// 3. Open the XMLHttpRequest object
+xhttp.open("GET", "ajax_info.txt");
+
+// 4. Send a request to the server
+xhttp.send();</code></pre></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">This code should show the contents of <code>info.txt</code> when the button is clicked, but nothing appears. Find the bug, fix it and say what will be displayed.</p>
+  <pre class="code"><code>&lt;div id="display"&gt;
+  &lt;button type="button" onclick="loadDoc()"&gt;Load&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "info.txt", true);
+  xhttp.send();
+}
+&lt;/script&gt;</code></pre>
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>The callback writes to <code>document.getElementById("demo")</code>, but no element has <code>id="demo"</code>. The div's id is <strong><code>display</code></strong>.</li><li><code>getElementById("demo")</code> returns <code>null</code>, so setting <code>.innerHTML</code> throws a TypeError and nothing changes.</li></ul><p><strong>Fix:</strong> use <code>document.getElementById("display")</code>, or rename the div to <code>id="demo"</code>.</p><p>When <code>readyState == 4</code> and <code>status == 200</code>, the div shows the contents of info.txt: a heading <strong>“Hello from AJAX”</strong> and the paragraph <strong>“I am flexible and dynamic”</strong>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">Explain the purpose of these XMLHttpRequest methods: <code>open()</code>, <code>send()</code>, <code>abort()</code>, <code>getAllResponseHeaders()</code>, <code>getResponseHeader()</code>, <code>setRequestHeader()</code>.</p>
+  
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Method</th><th scope="col">Purpose</th></tr></thead><tbody><tr><td><code>open(method, URL, [async, username, password])</code></td><td>Sets the destination URL, the method (GET/POST) and other options</td></tr><tr><td><code>send(params)</code></td><td>Sends the request, including any string or DOM object data</td></tr><tr><td><code>abort()</code></td><td>Terminates the current request</td></tr><tr><td><code>getAllResponseHeaders()</code></td><td>Returns all headers (name/value pairs) as a string</td></tr><tr><td><code>getResponseHeader("header")</code></td><td>Returns the value of the given header</td></tr><tr><td><code>setRequestHeader("label", "value")</code></td><td>Sets a request header. Call it before sending</td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">Explain the XMLHttpRequest properties <code>onload</code>, <code>onreadystatechange</code>, <code>readyState</code> (all values), <code>status</code>, <code>responseText</code>/<code>responseXML</code> and <code>statusText</code>.</p>
+  
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><code>onload</code>: the function called when the request has been received (loaded).</li><li><code>onreadystatechange</code>: the function called every time <code>readyState</code> changes.</li><li><code>readyState</code>: the status of the request. 0 = uninitialized, 1 = loading, 2 = loaded, 3 = interactive (some data returned), 4 = complete.</li><li><code>status</code>: the HTTP status returned by the server, e.g. 200 "OK", 403 "Forbidden", 404 "Not Found".</li><li><code>responseText</code>: the response as a string. <code>responseXML</code>: the response as XML data.</li><li><code>statusText</code>: the status text, e.g. "OK" or "Not Found".</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">Write jQuery code that loads <code>load.txt</code> into <code>#dis</code> when the button is clicked and shows an alert for success or error. Explain the three callback parameters.</p>
+  
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("#dis").load("load.txt", function(responseTxt, statusTxt, xhr){
+      if (statusTxt == "success")
+        alert("External content loaded successfully!");
+      if (statusTxt == "error")
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+    });
+  });
+});</code></pre><ul><li><code>responseTxt</code> contains the resulting content if the call succeeds.</li><li><code>statusTxt</code> contains the status of the call ("success" or "error").</li><li><code>xhr</code> contains the XMLHttpRequest object.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">Using <code>$.getJSON()</code>, write jQuery code that reads <code>simpleObject.json</code> (below) and shows its id, name and gender in <code>#dis</code> when the button is clicked.</p>
+  <pre class="code"><code>{ "id": 1, "name": "Adnan", "gender": "male" }</code></pre>
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>$(document).ready(function(){
+  $("button").click(function(){
+    $.getJSON('simpleObject.json', function(data) {
+      $('#dis').html('&lt;p&gt;ID: ' + data.id + '&lt;/p&gt;');
+      $('#dis').append('&lt;p&gt;Name: ' + data.name + '&lt;/p&gt;');
+      $('#dis').append('&lt;p&gt;Gender: ' + data.gender + '&lt;/p&gt;');
+    });
+  });
+});</code></pre><p><code>getJSON(URL, [data], [callback])</code> parses the returned JSON, so <code>data</code> is already an object. <code>.html()</code> replaces the content and <code>.append()</code> adds to it.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">Write a <code>$.ajax()</code> call that requests <code>simpleObject.json</code> as JSON with a 500 ms timeout. On success it appends the data to <code>#demo</code>; on failure it appends an error message. Give the syntax of <code>$.ajax()</code> and name the HTTP methods it can send.</p>
+  
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>$('#ajaxBtn').click(function () {
+  $.ajax('simpleObject.json', {
+    dataType: 'json',           // type of response data
+    timeout: 500,               // milliseconds
+    success: function (data, status, xhr) {
+      $('#demo').append(data.id + ' ' + data.name + ' ' + data.gender);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+      $('#demo').append('Error: ' + errorMessage);
+    }
+  });
+});</code></pre><ul><li>Syntax: <code>$.ajax(url)</code> or <code>$.ajax(url, [options])</code>. The options parameter customises the request.</li><li><code>$.ajax()</code> provides the core AJAX functionality of jQuery. It sends asynchronous HTTP requests and can send <strong>GET, POST, PUT, DELETE</strong> and other requests.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="lecture-09-1.html"><span class="dir">← Previous</span>Lecture 09 · I · JSON</a><a class="next" href="lecture-10.html"><span class="dir">Next →</span>Lecture 10 · Building REST API — Part I</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>

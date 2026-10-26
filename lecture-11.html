@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture 11 · Building REST API — Part II | ETF Quiz Hub</title>
+<meta name="description" content="Implementing a REST API with Node.js, npm, Express and body-parser, and calling it from a jQuery UI.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ETF</span><span class="brand-name">Quiz Hub</span></a>
+    <nav class="topnav" aria-label="Lectures">
+      <a href="lecture-07.html" title="Lecture 07: Responsive Web Design">07</a><a href="lecture-08.html" title="Lecture 08: jQuery">08</a><a href="lecture-09-1.html" title="Lecture 09 · I: JSON">09·I</a><a href="lecture-09-2.html" title="Lecture 09 · II: AJAX">09·II</a><a href="lecture-10.html" title="Lecture 10: Building REST API — Part I">10</a><a href="lecture-11.html" title="Lecture 11: Building REST API — Part II" aria-current="page">11</a><a href="lecture-12.html" title="Lecture 12: MongoDB">12</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero hero-lecture">
+    <p class="eyebrow"><a href="index.html">All lectures</a> <span aria-hidden="true">/</span> Lecture 11</p>
+    <h1>Building REST API — Part II</h1>
+    <p class="lede">Implementing a REST API with Node.js, npm, Express and body-parser, and calling it from a jQuery UI.</p>
+    <ul class="chips" aria-label="Topics covered"><li>Node.js</li><li>REPL</li><li>npm</li><li>Express routes</li><li>filter()</li><li>Calling the API with AJAX</li></ul>
+    <ul class="meta">
+      <li><strong>20</strong> questions</li>
+      <li><strong>10</strong> multiple choice</li>
+      <li><strong>10</strong> structured</li>
+    </ul>
+  </section>
+
+  <div class="layout" id="main">
+    <form class="quiz" id="quiz" method="dialog" autocomplete="off">
+      <section class="part" id="part-a" aria-labelledby="part-a-h">
+        <div class="part-head">
+          <p class="part-tag">Part A</p>
+          <h2 id="part-a-h">Multiple choice questions</h2>
+          <p>Pick one answer. It locks in, and the correct answer is shown with a short explanation.</p>
+        </div>
+<article class="q" id="q1">
+  <div class="q-head"><span class="q-no">Q1</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q1-t">What is Node.js?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q1-t">
+    <label class="opt"><input type="radio" name="q1" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">A browser plug-in for running Java applets</span></label><label class="opt"><input type="radio" name="q1" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">A cross-platform JavaScript environment on the server</span></label><label class="opt"><input type="radio" name="q1" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">A CSS framework</span></label><label class="opt"><input type="radio" name="q1" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">A NoSQL database</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Node.js runs JavaScript on the server, and JavaScript acts as a glue language for C++ modules.</p>
+  </div>
+</article>
+<article class="q" id="q2">
+  <div class="q-head"><span class="q-no">Q2</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q2-t">Which JavaScript engine powers Node.js?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q2-t">
+    <label class="opt"><input type="radio" name="q2" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">SpiderMonkey</span></label><label class="opt"><input type="radio" name="q2" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Chakra</span></label><label class="opt"><input type="radio" name="q2" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">Google's V8</span></label><label class="opt"><input type="radio" name="q2" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">JavaScriptCore</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain">Node.js is powered by Google's V8 JavaScript engine.</p>
+  </div>
+</article>
+<article class="q" id="q3">
+  <div class="q-head"><span class="q-no">Q3</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q3-t">Which I/O model does Node.js use?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q3-t">
+    <label class="opt"><input type="radio" name="q3" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Event-driven, non-blocking I/O</span></label><label class="opt"><input type="radio" name="q3" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Multi-threaded, blocking I/O</span></label><label class="opt"><input type="radio" name="q3" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Batch processing</span></label><label class="opt"><input type="radio" name="q3" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Synchronous polling</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain">Node.js uses an event-driven, non-blocking I/O model.</p>
+  </div>
+</article>
+<article class="q" id="q4">
+  <div class="q-head"><span class="q-no">Q4</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q4-t">What does REPL stand for?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q4-t">
+    <label class="opt"><input type="radio" name="q4" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Run, Execute, Print, Log</span></label><label class="opt"><input type="radio" name="q4" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Request, Evaluate, Process, Listen</span></label><label class="opt"><input type="radio" name="q4" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Read, Edit, Publish, Launch</span></label><label class="opt"><input type="radio" name="q4" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">Read, Evaluate, Print, Loop</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain">REPL reads a command, evaluates it, prints the result and loops back for the next command.</p>
+  </div>
+</article>
+<article class="q" id="q5">
+  <div class="q-head"><span class="q-no">Q5</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q5-t">What does <code>npm init</code> do in the demo?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q5-t">
+    <label class="opt"><input type="radio" name="q5" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Installs Express</span></label><label class="opt"><input type="radio" name="q5" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Starts the server on port 3000</span></label><label class="opt"><input type="radio" name="q5" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">Creates the package.json file</span></label><label class="opt"><input type="radio" name="q5" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Installs Node.js</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>npm init</code> creates package.json. By default the main file is index.js.</p>
+  </div>
+</article>
+<article class="q" id="q6">
+  <div class="q-head"><span class="q-no">Q6</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q6-t">After running Example 1 (<code>http.createServer(...).listen(8080)</code>), which URL shows “Hello World!”?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q6-t">
+    <label class="opt"><input type="radio" name="q6" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">http://localhost:3000</span></label><label class="opt"><input type="radio" name="q6" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text">http://localhost:8080</span></label><label class="opt"><input type="radio" name="q6" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">http://localhost/hello</span></label><label class="opt"><input type="radio" name="q6" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">file:///index.js</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">The server listens on port 8080.</p>
+  </div>
+</article>
+<article class="q" id="q7">
+  <div class="q-head"><span class="q-no">Q7</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q7-t">What is <code>body-parser</code> used for?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q7-t">
+    <label class="opt"><input type="radio" name="q7" value="a" class="ok"><span class="key" aria-hidden="true">A</span><span class="opt-text">Parsing incoming HTTP request bodies (JSON / URL-encoded)</span></label><label class="opt"><input type="radio" name="q7" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Restarting the server automatically</span></label><label class="opt"><input type="radio" name="q7" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">Connecting to MongoDB</span></label><label class="opt"><input type="radio" name="q7" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Enabling cross-origin requests</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is A.</p>
+    <p class="explain"><code>bodyParser.json()</code> and <code>bodyParser.urlencoded()</code> parse request bodies so that <code>req.body</code> is available. nodemon handles auto-restart.</p>
+  </div>
+</article>
+<article class="q" id="q8">
+  <div class="q-head"><span class="q-no">Q8</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q8-t">Why is <code>app.use(cors())</code> added?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q8-t">
+    <label class="opt"><input type="radio" name="q8" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">To compress responses</span></label><label class="opt"><input type="radio" name="q8" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">To log every request</span></label><label class="opt"><input type="radio" name="q8" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text">To parse JSON bodies</span></label><label class="opt"><input type="radio" name="q8" value="d" class="ok"><span class="key" aria-hidden="true">D</span><span class="opt-text">To enable Cross-Origin Resource Sharing, so pages on other domains can call the API</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is D.</p>
+    <p class="explain"><code>cors()</code> enables Cross-Origin Resource Sharing, which allows requests from other domains.</p>
+  </div>
+</article>
+<article class="q" id="q9">
+  <div class="q-head"><span class="q-no">Q9</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q9-t">In <code>app.get("/student/:id", (req, res) =&gt; {...})</code>, how do you read the id from the URL?</p>
+  
+  <div class="opts" role="radiogroup" aria-labelledby="q9-t">
+    <label class="opt"><input type="radio" name="q9" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text"><code>req.body.id</code></span></label><label class="opt"><input type="radio" name="q9" value="b" class="ok"><span class="key" aria-hidden="true">B</span><span class="opt-text"><code>req.params.id</code></span></label><label class="opt"><input type="radio" name="q9" value="c"><span class="key" aria-hidden="true">C</span><span class="opt-text"><code>res.params.id</code></span></label><label class="opt"><input type="radio" name="q9" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text"><code>req.query.student</code></span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is B.</p>
+    <p class="explain">Route parameters such as <code>:id</code> are in <code>req.params</code>. The lecture code uses <code>parseInt(req.params.id)</code>.</p>
+  </div>
+</article>
+<article class="q" id="q10">
+  <div class="q-head"><span class="q-no">Q10</span><span class="q-type">Multiple choice</span></div>
+  <p class="q-text" id="q10-t">What does this line in the DELETE route do?</p>
+  <pre class="code"><code>students = students.filter((x) =&gt; x.id != studentId);</code></pre>
+  <div class="opts" role="radiogroup" aria-labelledby="q10-t">
+    <label class="opt"><input type="radio" name="q10" value="a"><span class="key" aria-hidden="true">A</span><span class="opt-text">Returns only the student being deleted</span></label><label class="opt"><input type="radio" name="q10" value="b"><span class="key" aria-hidden="true">B</span><span class="opt-text">Sorts the students by id</span></label><label class="opt"><input type="radio" name="q10" value="c" class="ok"><span class="key" aria-hidden="true">C</span><span class="opt-text">Creates a new array with every student except the one with that id, which deletes it</span></label><label class="opt"><input type="radio" name="q10" value="d"><span class="key" aria-hidden="true">D</span><span class="opt-text">Sends status 404</span></label>
+  </div>
+  <div class="fb">
+    <p class="verdict verdict-ok">Correct!</p>
+    <p class="verdict verdict-bad">Not quite. The correct answer is C.</p>
+    <p class="explain"><code>filter()</code> keeps the elements that pass the test (<code>x.id != studentId</code>), so the matching student is left out.</p>
+  </div>
+</article>
+      </section>
+
+      <section class="part" id="part-b" aria-labelledby="part-b-h">
+        <div class="part-head">
+          <p class="part-tag">Part B</p>
+          <h2 id="part-b-h">Structured questions</h2>
+          <p>Write your answer in the box first, then open the model answer and tick “I got this right” if yours matches.</p>
+        </div>
+<article class="q q-s" id="q11">
+  <div class="q-head"><span class="q-no">Q11</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q11-t">What is Node.js? Describe five of its key characteristics.</p>
+  
+  <textarea name="a11" rows="5" placeholder="Write your answer here…" aria-labelledby="q11-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>A <strong>cross-platform JavaScript environment on the server</strong></li><li>JavaScript is used as a <strong>glue language for C++ modules</strong></li><li>Powered by <strong>Google's V8</strong> JavaScript engine</li><li>Uses an <strong>event-driven, non-blocking I/O</strong> model</li><li>Like a web browser with a different set of C++ modules</li><li>Provides modules for working with local system resources such as <strong>processes, the file system and networking</strong></li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s11"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q12">
+  <div class="q-head"><span class="q-no">Q12</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q12-t">What is the Node <strong>REPL</strong> environment? List its features and uses.</p>
+  
+  <textarea name="a12" rows="5" placeholder="Write your answer here…" aria-labelledby="q12-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><p><strong>REPL = Read, Evaluate, Print, Loop.</strong> The user enters a JavaScript command, Node evaluates it, prints the result and loops back for another command.</p><ul><li>Supports multi-line commands</li><li>Customisable command prompt and pre-configured context</li><li>Sessions can be saved and reloaded</li><li>Useful for learning JavaScript or running tasks from a JavaScript command line</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s12"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q13">
+  <div class="q-head"><span class="q-no">Q13</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q13-t">Explain the difference between the <strong>Long-Term Support (LTS)</strong> and <strong>Current</strong> versions of Node.js, and list the ways Node.js can be installed.</p>
+  
+  <textarea name="a13" rows="5" placeholder="Write your answer here…" aria-labelledby="q13-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><strong>LTS version:</strong> best for applications in production because it is stable and supported long-term.</li><li><strong>Current version:</strong> best for working with the newest features.</li></ul><p>Node.js can be installed from a <strong>platform-specific installer</strong> (from nodejs.org, where most users accept the defaults), from <strong>pre-compiled binaries</strong>, or by <strong>compiling the source code</strong>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s13"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q14">
+  <div class="q-head"><span class="q-no">Q14</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q14-t">Explain each line of this Node.js program and state what happens when it runs.</p>
+  <pre class="code"><code>var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World!');
+}).listen(8080);</code></pre>
+  <textarea name="a14" rows="5" placeholder="Write your answer here…" aria-labelledby="q14-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li><code>require('http')</code> imports Node's built-in http module.</li><li><code>http.createServer(function (req, res) {...})</code> creates an HTTP server. The function runs for every request, with <code>req</code> the request and <code>res</code> the response.</li><li><code>res.writeHead(200, {'Content-Type': 'text/plain'})</code> sends status 200 (OK) and a plain-text content type.</li><li><code>res.end('Hello World!')</code> sends the body and ends the response.</li><li><code>.listen(8080)</code> makes the server listen on port 8080.</li></ul><p>Result: opening <strong>http://localhost:8080</strong> in a browser shows <strong>“Hello World!”</strong>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s14"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q15">
+  <div class="q-head"><span class="q-no">Q15</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q15-t">Explain the purpose of each command used to set up the REST demo.</p>
+  <pre class="code"><code>npm init
+npm install express --save
+npm install --save body-parser
+npm install -g nodemon</code></pre>
+  <textarea name="a15" rows="5" placeholder="Write your answer here…" aria-labelledby="q15-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Command</th><th scope="col">Purpose</th></tr></thead><tbody><tr><td><code>npm init</code></td><td>Creates <strong>package.json</strong> for the project (main file index.js by default)</td></tr><tr><td><code>npm install express --save</code></td><td>Installs <strong>Express</strong>, the web framework/middleware for Node.js that saves a lot of time, and saves it as a dependency</td></tr><tr><td><code>npm install --save body-parser</code></td><td>Installs <strong>body-parser</strong> to parse HTTP request bodies</td></tr><tr><td><code>npm install -g nodemon</code></td><td>Installs <strong>nodemon</strong> globally (<code>-g</code>). It restarts the server automatically when code changes, which makes development easier</td></tr></tbody></table></div></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s15"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q16">
+  <div class="q-head"><span class="q-no">Q16</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q16-t">Explain what this Express setup code does.</p>
+  <pre class="code"><code>var express = require("express");
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+var app = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.listen(3000, () =&gt; {
+  console.log("Server running on port 3000");
+});</code></pre>
+  <textarea name="a16" rows="5" placeholder="Write your answer here…" aria-labelledby="q16-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><ul><li>Imports <strong>express</strong> (the web framework), <strong>body-parser</strong> (parses request bodies) and <strong>cors</strong> (middleware for Cross-Origin Resource Sharing).</li><li><code>var app = express()</code> creates the Express application.</li><li><code>app.use(cors())</code> allows requests from other domains.</li><li><code>bodyParser.urlencoded({ extended: false })</code> parses URL-encoded (form) bodies, and <code>bodyParser.json()</code> parses JSON bodies into <code>req.body</code>.</li><li><code>app.listen(3000, ...)</code> starts the server on port 3000 and logs “Server running on port 3000”.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s16"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q17">
+  <div class="q-head"><span class="q-no">Q17</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q17-t">Explain the <code>filter()</code> array method and its syntax. What does <code>students.filter((x) =&gt; x.id == sid)[0]</code> return when (a) a match exists and (b) no match exists?</p>
+  
+  <textarea name="a17" rows="5" placeholder="Write your answer here…" aria-labelledby="q17-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>array.filter(function(currentValue, index, arr), thisValue)</code></pre><p><code>filter()</code> creates a <strong>new array</strong> with only the elements that pass the test function. It does not change the original array.</p><ul><li>(a) A match exists: <code>[0]</code> returns the <strong>first student object</strong> whose id equals <code>sid</code>.</li><li>(b) No match: <code>filter()</code> returns an empty array, so <code>[0]</code> is <strong><code>undefined</code></strong>. The route treats this as falsy and sends <strong>404</strong>.</li></ul><p>Example: <code>[32, 33, 12, 40].filter(age =&gt; age &gt; 30)</code> gives <code>[32, 33, 40]</code>.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s17"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q18">
+  <div class="q-head"><span class="q-no">Q18</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q18-t">Write Express route handlers for (a) <code>GET /students</code>, which returns all students as JSON, and (b) <code>GET /student/:id</code>, which returns one student or status 404 if not found.</p>
+  
+  <textarea name="a18" rows="5" placeholder="Write your answer here…" aria-labelledby="q18-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>let students = [{"id":1, "name":"Nimal", "Address":"Malabe"}];
+
+app.get("/students", (req, res) =&gt; {
+  res.json(students);
+});
+
+app.get("/student/:id", (req, res) =&gt; {
+  let sid = parseInt(req.params.id);
+  let tempStu = students.filter((x) =&gt; x.id == sid)[0];
+  if (tempStu) {
+    res.json(tempStu);
+  } else {
+    res.sendStatus(404);
+  }
+});</code></pre></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s18"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q19">
+  <div class="q-head"><span class="q-no">Q19</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q19-t">Write Express route handlers to (a) add a new student with <code>POST /student</code> and (b) update a student's name and Address with <code>PUT /student/:id</code>, responding 200 if updated and 404 if not found.</p>
+  
+  <textarea name="a19" rows="5" placeholder="Write your answer here…" aria-labelledby="q19-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>// (a) Insert
+app.post("/student", (req, res) =&gt; {
+  const newstudent = req.body;
+  students.push(newstudent);
+  res.send('Student is added to the list');
+});
+
+// (b) Update
+app.put("/student/:id", (req, res) =&gt; {
+  let sid = parseInt(req.params.id);
+  let stu = req.body;
+  let tempStu = students.filter((x) =&gt; x.id === sid)[0];
+  if (tempStu) {
+    tempStu.name = stu.name;
+    tempStu.Address = stu.Address;
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(404);
+  }
+});</code></pre><p><code>req.body</code> is available because body-parser was registered.</p></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s19"><span>I got this right</span></label>
+</article>
+<article class="q q-s" id="q20">
+  <div class="q-head"><span class="q-no">Q20</span><span class="q-type">Structured</span></div>
+  <p class="q-text" id="q20-t">Write jQuery <code>$.ajax()</code> code for the UI that sends a new student (id, name and address from the text boxes <code>#SId</code>, <code>#SName</code> and <code>#SAddress</code>) to <code>POST /student</code>. Why is <code>JSON.stringify()</code> used? Name a tool that can test the API without a UI.</p>
+  
+  <textarea name="a20" rows="5" placeholder="Write your answer here…" aria-labelledby="q20-t"></textarea>
+  <details class="model">
+    <summary><span class="when-closed">Show model answer</span><span class="when-open">Hide model answer</span></summary>
+    <div class="model-body"><pre class="code"><code>$.ajax({
+  type: 'POST',
+  url: 'http://localhost:3000/student/',
+  contentType: 'application/json',
+  data: JSON.stringify({
+    "id": $('#SId').val(),
+    "name": $('#SName').val(),
+    "address": $('#SAddress').val()
+  }),
+  success: function (data, textStatus, jQxhr) {
+    alert("Data Inserted");
+  },
+  error: function (xhr, textStatus, error) {
+    alert("Error");
+  }
+});</code></pre><ul><li><code>JSON.stringify()</code> converts the JavaScript object into a <strong>JSON string</strong>, because data sent to or received from a web server is always a string. With <code>contentType: 'application/json'</code>, body-parser on the server turns it back into an object (<code>req.body</code>). On the client, <code>JSON.parse()</code> converts received strings into objects.</li><li><strong>Postman</strong> can test the API without a UI.</li></ul></div>
+  </details>
+  <label class="self"><input type="checkbox" name="s20"><span>I got this right</span></label>
+</article>
+      </section>
+    </form>
+
+    <aside class="panel" aria-label="Your progress">
+      <div class="panel-card">
+        <p class="panel-title">Your progress</p>
+        <div class="stats-row">
+          <div class="stat stat-main"><span class="stat-val v-score"></span><span class="stat-lbl">MCQ score</span></div>
+          <div class="stat"><span class="stat-val v-ans"></span><span class="stat-lbl">MCQ answered</span></div>
+          <div class="stat"><span class="stat-val v-self"></span><span class="stat-lbl">Structured correct</span></div>
+        </div>
+        <nav class="qnav" aria-label="Jump to question">
+          <p class="qnav-lbl">Part A · MCQ</p>
+          <div class="qnav-grid"><a href="#q1">1</a><a href="#q2">2</a><a href="#q3">3</a><a href="#q4">4</a><a href="#q5">5</a><a href="#q6">6</a><a href="#q7">7</a><a href="#q8">8</a><a href="#q9">9</a><a href="#q10">10</a></div>
+          <p class="qnav-lbl">Part B · Structured</p>
+          <div class="qnav-grid"><a href="#q11">11</a><a href="#q12">12</a><a href="#q13">13</a><a href="#q14">14</a><a href="#q15">15</a><a href="#q16">16</a><a href="#q17">17</a><a href="#q18">18</a><a href="#q19">19</a><a href="#q20">20</a></div>
+          <ul class="legend">
+            <li><span class="dot dot-ok"></span>Correct</li>
+            <li><span class="dot dot-bad"></span>Wrong</li>
+            <li><span class="dot dot-wip"></span>Written</li>
+          </ul>
+        </nav>
+        <button type="reset" form="quiz" class="btn-reset">Reset answers</button>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other lectures"><a class="prev" href="lecture-10.html"><span class="dir">← Previous</span>Lecture 10 · Building REST API — Part I</a><a class="next" href="lecture-12.html"><span class="dir">Next →</span>Lecture 12 · MongoDB</a></nav>
+</div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>ETF Quiz Hub · Emerging Technologies &amp; Frameworks · Questions based on the lecture slides (Lectures 07–12).</p>
+    <p>Pure HTML &amp; CSS, no JavaScript. Your answers are not saved: refreshing or pressing “Reset answers” clears them.</p>
+  </div>
+</footer>
+</body>
+</html>
